@@ -1,5 +1,3 @@
-# "files.autoSave": "afterDelay"
-
 import ui
 import api
 

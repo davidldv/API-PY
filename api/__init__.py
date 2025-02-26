@@ -2,7 +2,22 @@ from sodapy import Socrata
 import pandas as pd
 
 def consultar_datos(departamento, municipio, cultivo, limite):
+    # Initialize client without authentication for public data
     client = Socrata("www.datos.gov.co", None)
+    
+    # Build query filters
+    query = f"departamento='{departamento}'"
+    if municipio:
+        query += f" AND municipio='{municipio}'"
+    if cultivo:
+        query += f" AND cultivo='{cultivo}'"
+    
+    try:
+        resultados = client.get("ch4u-f3i5", limit=limite, where=query)
+        return resultados
+    except Exception as e:
+        print(f"Error accessing the API: {str(e)}")
+        return []
     resultados = client.get("ch4u-f3i5", limit=limite)
     df = pd.DataFrame.from_records(resultados)
     
