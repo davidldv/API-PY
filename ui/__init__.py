@@ -13,8 +13,6 @@ def mostrar_tabla(datos):
     print(df)
 
 def obtener_entrada():
-    print("\n=== Consulta de Datos Agrícolas ===")
-    
     departamento = input("Ingrese el departamento: ").upper()
     municipio = input("Ingrese el municipio (o presione Enter para omitir): ").upper()
     cultivo = input("Ingrese el cultivo (o presione Enter para omitir): ").upper()
