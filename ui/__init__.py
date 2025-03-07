@@ -1,14 +1,12 @@
 import pandas as pd
 
 def mostrar_tabla(datos):
-    # Convert the list of data to a pandas DataFrame
     df = pd.DataFrame(datos)
     
     if len(datos) == 0:
         print("No se encontraron datos para la consulta especificada.")
         return
         
-    # Display the DataFrame
     print("\nResultados encontrados:")
     print(df)
 

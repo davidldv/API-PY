@@ -2,10 +2,8 @@ import pandas as pd
 
 def consultar_datos(departamento, municipio, cultivo, limite):
     try:
-        # Asumiendo que el archivo Excel está en la carpeta data
         df = pd.read_excel("c:/Users/david/Dev/API-PY/data/laboratorio_suelo.xlsx")
         
-        # Aplicar filtros
         mask = df['Departamento'].str.upper() == departamento.upper()
         if municipio:
             mask &= df['Municipio'].str.upper() == municipio.upper()
